@@ -1,7 +1,19 @@
 var express = require('express');
 var app = express();
 
-app.use('/static', express.static(__dirname + '/public'));
+app.use('/static', express.static(__dirname + '/public/static'));
+
+app.get('/favicon.ico', function (request, response) {
+    response.sendfile('public/favicon.ico');
+});
+
+app.get('/humans.txt', function (request, response) {
+    response.sendfile('public/humans.txt');
+});
+
+app.get('/robots.txt', function (request, response) {
+    response.sendfile('public/robots.txt');
+});
 
 app.get('/', function (request, response) {
     response.sendfile('public/index.html');
