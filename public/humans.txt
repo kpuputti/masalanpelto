@@ -1,10 +1,11 @@
 /* TEAM */
 Developer: Kimmo Puputti
-Site: https://github.com/kpuputti/masalanpelto
+Site: http://kpuputti.fi/
 Twitter: kpuputti
 Location: Kirkkonummi, Finland
 
 /* SITE */
 Standards: HTML5, CSS3
 Components: Node.js, npm, heroku toolbelt, Express.js
-Software: Emacs, nodemon
+Software: Ubuntu, Emacs, nodemon
+GitHub: https://github.com/kpuputti/masalanpelto
