@@ -1,6 +1,9 @@
 # Masalanpelto
 
-Website for Masalanpelto
+[Express](http://expressjs.com/) app for Masalanpelto housing
+association with [Amazon S3](http://aws.amazon.com/s3/) file storage.
+
+The app is running on Heroku at http://masalanpelto.herokuapp.com/
 
 ## Getting started
 
