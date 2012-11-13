@@ -1,6 +1,7 @@
 var express = require('express');
 var consolidate = require('consolidate');
 var swig = require('swig');
+var path = require('path');
 
 var app = express();
 var APP_ENV = app.get('env');
@@ -38,6 +39,11 @@ app.configure(function () {
         secret: process.env.SESSION_SECRET || 'session secret'
     }));
     app.use(express.csrf());
+
+    var dayInMilliseconds = 24 * 60 * 60 * 1000;
+    app.use(express.static(path.join(__dirname, 'public'), {
+        maxAge: dayInMilliseconds
+    }));
 
     if (!IS_PRODUCTION) {
         app.use(express.errorHandler());
