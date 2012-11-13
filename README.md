@@ -1,7 +1,6 @@
 # Masalanpelto
 
-[Express](http://expressjs.com/) app for Masalanpelto housing
-association with [Amazon S3](http://aws.amazon.com/s3/) file storage.
+[Express](http://expressjs.com/) app for Masalanpelto housing association.
 
 The app is running on Heroku at http://masalanpelto.herokuapp.com/
 
@@ -20,11 +19,11 @@ Install dependencies:
 
 Either
 
-    node web.js
+    node server.js
 
 or
 
-    nodemon web.js
+    nodemon server.js
 
 or
 
