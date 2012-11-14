@@ -2,6 +2,7 @@ var express = require('express');
 var consolidate = require('consolidate');
 var swig = require('swig');
 var path = require('path');
+var auth = require('./auth');
 
 var app = express();
 
@@ -61,7 +62,38 @@ app.configure(function () {
 // Routing
 
 app.get('/', function (req, res) {
-    res.render('index');
+    res.render('index', {
+        loggedIn: req.session.loggedIn,
+        username: req.session.username
+    });
+});
+
+app.get('/login', function (req, res) {
+    res.render('login', {
+        loggedIn: req.session.loggedIn,
+        username: req.session.username,
+        _csrf: req.session._csrf
+    });
+});
+
+app.post('/login', function (req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+
+    auth.authenticate(username, password, function (err, user) {
+        if (err) {
+            res.redirect('/login');
+            return;
+        }
+        req.session.loggedIn = true;
+        req.session.username = user;
+        res.redirect('/');
+    });
+});
+
+app.get('/logout', function (req, res) {
+    req.session = null;
+    res.redirect('/');
 });
 
 module.exports = app;

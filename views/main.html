@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<header>
+  <h1>{% block title %}{% endblock %}</h1>
+
+  {% if loggedIn %}
+    <p>{{ username }} | <a href="/logout">Kirjaudu ulos</a></p>
+  {% else %}
+    <p><a href="/login">Kirjaudu sisään</a></p>
+  {% endif %}
+</header>
+
+{% block content %}{% endblock %}
+
+{% endblock %}
