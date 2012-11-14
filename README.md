@@ -11,6 +11,14 @@ Install required tools:
 * [heroku toolbelt](https://toolbelt.heroku.com/)
 * [Node.js (along with npm)](http://nodejs.org/)
 
+Install [Grunt](http://gruntjs.com/):
+
+    npm install -g grunt
+
+Install [Compass](http://compass-style.org/)
+
+    gem install compass
+
 Install dependencies:
 
     npm install
@@ -19,11 +27,11 @@ Install dependencies:
 
 Either
 
-    node server.js
+    node lib/server.js
 
 or
 
-    nodemon server.js
+    nodemon lib/server.js
 
 or
 
