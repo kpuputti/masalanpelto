@@ -11,7 +11,8 @@
     "dependencies": {
         "express": "3.0.x",
         "swig": "*",
-        "consolidate": "*"
+        "consolidate": "*",
+        "grunt-compass": "*"
     },
     "licence": "MIT",
     "private": true,
