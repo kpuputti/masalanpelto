@@ -11,7 +11,7 @@ module.exports = function (grunt) {
                 ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
         },
         lint: {
-            files: ['grunt.js', 'public/**/*.js', 'lib/**/*.js', 'test/**/*.js']
+            files: ['grunt.js', 'public/js/**/*.js', 'lib/**/*.js', 'test/**/*.js']
         },
         concat: {
             dist: {
@@ -25,9 +25,27 @@ module.exports = function (grunt) {
                 dest: 'public/dist/<%= pkg.name %>.min.js'
             }
         },
+        compass: {
+            dev: {
+                src: 'public/sass',
+                dest: 'public/dist',
+                outputstyle: 'compressed',
+                linecomments: false,
+                forcecompile: true,
+                debugsass: false,
+                images: 'public/img',
+                relativeassets: true
+            }
+        },
         watch: {
-            files: '<config:lint.files>',
-            tasks: 'lint qunit'
+            scripts: {
+                files: '<config:lint.files>',
+                tasks: 'lint'
+            },
+            styles: {
+                files: ['public/sass/**/*.scss'],
+                tasks: 'compass:dev'
+            }
         },
         jshint: {
             options: {
@@ -62,7 +80,9 @@ module.exports = function (grunt) {
         uglify: {}
     });
 
+    grunt.loadNpmTasks('grunt-compass');
+
     // Default task.
-    grunt.registerTask('default', 'lint concat min');
+    grunt.registerTask('default', 'lint concat min compass:dev');
 
 };
