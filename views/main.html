@@ -6,6 +6,12 @@
     <div class="navbar-inner">
       <a class="brand" href="/">Masalanpelto</a>
 
+      <nav class="nav-collapse collapse">
+        <ul class="nav">
+          <li><a href="/tietoa">Tietoa</a></li>
+        </ul>
+      </nav>
+
       <p class="navbar-text pull-right user-actions">
         {% if loggedIn %}
           {{ username }} | <a href="/logout">Kirjaudu ulos</a>
@@ -17,10 +23,11 @@
     </div>
   </header>
 
-  <div class="page-header">
-    <h1>{% block title %}{% endblock %}</h1>
-  </div>
-
   {% block content %}{% endblock %}
+
+  <hr>
+  <footer>
+    <p>Masalanpelto</p>
+  </footer>
 
 {% endblock %}
