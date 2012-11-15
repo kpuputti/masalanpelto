@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                 tasks: 'lint'
             },
             styles: {
-                files: ['public/sass/**/*.scss'],
+                files: ['public/sass/**/*.scss', 'public/img/*'],
                 tasks: 'compass:dev'
             }
         },
