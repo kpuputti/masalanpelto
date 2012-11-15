@@ -6,17 +6,21 @@
 {% block container %}
 
   {% if loggedIn %}
+
     <p>Jo kirjautuneena tunnuksella {{ username }}.</p>
     <p><a href="/">Takaisin etusivulle</a></p>
+
   {% else %}
 
-  <form class="form-signin" action="/login" method="post">
-    <h2 class="form-signin-heading">Kirjaudu sisään</h2>
-    <input type="text" class="input-block-level" name="username" placeholder="Tunnus" tabindex="1" required autofocus>
-    <input type="password" class="input-block-level" name="password" placeholder="Salasana" tabindex="2" required>
-    <input type="hidden" name="_csrf" value="{{ _csrf }}">
-    <button class="btn btn-large btn-primary" type="submit">Kirjaudu</button>
-  </form>
+    <form class="form-signin" action="/login" method="post">
+      <h2 class="form-signin-heading">Kirjaudu sisään</h2>
+
+      <input type="text" class="input-block-level" name="username" placeholder="Tunnus" tabindex="1" required autofocus>
+      <input type="password" class="input-block-level" name="password" placeholder="Salasana" tabindex="2" required>
+
+      <input type="hidden" name="_csrf" value="{{ _csrf }}">
+      <button class="btn btn-large btn-primary" type="submit">Kirjaudu</button>
+    </form>
 
   {% endif %}
 
