@@ -1,8 +1,17 @@
 html, body {
-    background-color: #eee;
-    color: #222;
+    font-family: Helvetica, Verdana, sans-serif;
+    background-color: $page_bg_color;
+    color: $page_color;
 }
 
 header {
 
+    h1 {
+
+    }
+}
+footer {
+}
+
+.content {
 }
