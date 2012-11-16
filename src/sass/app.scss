@@ -1,12 +1,15 @@
-@import "compass/css3";
-
+// HTML5 boilerplate normalize + base styles
 @import "h5bp/normalize";
 @import "h5bp/base";
 
+// Compass includes
+@import "compass/css3";
+
+// App styles
 @import "vars";
 @import "common";
-
 @import "login";
 
+// HTML5 boilerplate extras
 //@import "h5bp/helpers";
 @import "h5bp/print";
