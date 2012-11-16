@@ -7,8 +7,12 @@
 
     <nav>
       <ul>
-        <li><a href="/">Etusivu</a></li>
-        <li><a href="/tietoa">Tietoa</a></li>
+        {% for item in nav %}
+          <li>
+            <a {% if item.active %}class="active"{% endif %}
+               href="{{ item.path }}">{{ item.name }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </nav>
 

@@ -29,7 +29,7 @@ module.exports = function (grunt) {
             dev: {
                 src: 'src/sass',
                 dest: 'public/dist',
-                outputstyle: 'compressed',
+                outputstyle: 'compressed', // One of: nested, expanded, compact, compressed
                 linecomments: false,
                 forcecompile: true,
                 debugsass: false,
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                 tasks: 'lint'
             },
             styles: {
-                files: ['src/sass/**/*.scss', 'public/img/*'],
+                files: ['grunt.js', 'src/sass/**/*.scss', 'public/img/*'],
                 tasks: 'compass:dev'
             }
         },

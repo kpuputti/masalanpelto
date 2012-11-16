@@ -1,10 +1,15 @@
+$large-screen-breakpoint: 60em;
+
 $page-bg-color: #fff;
 $page-color: #444;
 
+$header-height: 3em;
 $header-bg-color: #222;
 $header-color: #999;
-$header-color-hover: #eee;
-$header-bg-color-hover: #444;
+$header-color-hover: #fff;
+$header-bg-color-hover: #111;
+$header-color-active: #fff;
+$header-bg-color-active: #111;
 $header-border-radius: 5px;
 
 $footer-color: #999;
