@@ -2,28 +2,29 @@
 
 {% block container %}
 
-  <header class="navbar navbar-inverse">
-    <div class="navbar-inner">
-      <a class="brand" href="/">Masalanpelto</a>
+  <header>
+    <a class="home" href="/">Masalanpelto</a>
 
-      <nav class="nav-collapse collapse">
-        <ul class="nav">
-          <li><a href="/tietoa">Tietoa</a></li>
-        </ul>
-      </nav>
+    <nav>
+      <ul>
+        <li><a href="/">Etusivu</a></li>
+        <li><a href="/tietoa">Tietoa</a></li>
+      </ul>
+    </nav>
 
-      <p class="navbar-text pull-right user-actions">
-        {% if loggedIn %}
-          {{ username }} | <a href="/logout">Kirjaudu ulos</a>
-        {% else %}
-          <a href="/login">Kirjaudu sisään</a>
-        {% endif %}
-      </p>
+    <p class="user-actions">
+      {% if loggedIn %}
+        {{ username }} | <a href="/logout">Kirjaudu ulos</a>
+      {% else %}
+        <a href="/login">Kirjaudu sisään</a>
+      {% endif %}
+    </p>
 
-    </div>
   </header>
 
-  {% block content %}{% endblock %}
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
 
   <hr>
   <footer>
