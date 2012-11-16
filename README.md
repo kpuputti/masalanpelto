@@ -25,17 +25,19 @@ Install dependencies:
 
 ## Running locally
 
-Either
+Build static assets (public JavaScript + SCSS files):
 
-    node lib/server.js
+    grunt
 
-or
+Build as files change:
 
-    nodemon lib/server.js
+    grunt watch
 
-or
+Start app:
 
     foreman start
+
+Now the app is running at `localhost:5000`.
 
 ## Deploying
 
