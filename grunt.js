@@ -11,23 +11,23 @@ module.exports = function (grunt) {
                 ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
         },
         lint: {
-            files: ['grunt.js', 'public/js/**/*.js', 'lib/**/*.js', 'test/**/*.js']
+            files: ['grunt.js', 'src/js/**/*.js', 'lib/**/*.js', 'test/**/*.js']
         },
         concat: {
             dist: {
-                src: ['<banner:meta.banner>', '<file_strip_banner:public/js/<%= pkg.name %>.js>'],
-                dest: 'public/dist/<%= pkg.name %>.js'
+                src: ['<banner:meta.banner>', '<file_strip_banner:src/js/app.js>'],
+                dest: 'public/dist/app.js'
             }
         },
         min: {
             dist: {
                 src: ['<banner:meta.banner>', '<config:concat.dist.dest>'],
-                dest: 'public/dist/<%= pkg.name %>.min.js'
+                dest: 'public/dist/app.min.js'
             }
         },
         compass: {
             dev: {
-                src: 'public/sass',
+                src: 'src/sass',
                 dest: 'public/dist',
                 outputstyle: 'compressed',
                 linecomments: false,
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                 tasks: 'lint'
             },
             styles: {
-                files: ['public/sass/**/*.scss', 'public/img/*'],
+                files: ['src/sass/**/*.scss', 'public/img/*'],
                 tasks: 'compass:dev'
             }
         },
