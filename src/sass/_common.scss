@@ -11,7 +11,7 @@ body {
 
     position: relative;
     margin: 0 auto;
-    padding: 0 0.5em;
+    padding: 0 $container-side-padding;
 
     @include large-screen {
         width: $large-screen-breakpoint;
@@ -21,9 +21,11 @@ body {
 header {
     @include background-image(linear-gradient(top, #222, #111));
     @include box-sizing(border-box);
-    @include box-shadow(0 2px 10px rgba(0,0,0,.25));
+    @include single-transition(all, 0.5s);
+    @include transparent-box-shadow;
 
     position: relative;
+    width: 100%;
     margin: 0 auto;
     padding: 0 0.5em;
     height: $header-height;
@@ -55,30 +57,32 @@ header {
         margin-right: 2em;
     }
 
-    nav ul {
+    nav {
 
-        padding: 0;
-        margin: 0;
+        ul {
+            padding: 0;
+            margin: 0;
+        }
 
         li {
             display: inline;
             float: left;
+        }
 
-            a {
-                @include single-transition(all, 0.5s);
+        a {
+            @include single-transition(all, 0.5s);
 
-                display: block;
-                padding: 0 1em;
-                color: $header-color;
+            display: block;
+            padding: 0 1em;
+            color: $header-color;
 
-                &.active {
-                    color: $header-color-active;
-                    background-color: $header-bg-color-active;
-                }
-                &:hover {
-                    color: $header-color-hover;
-                    background-color: $header-bg-color-hover;
-                }
+            &.active {
+                color: $header-color-active;
+                background-color: $header-bg-color-active;
+            }
+            &:hover {
+                color: $header-color-hover;
+                background-color: $header-bg-color-hover;
             }
         }
     }
@@ -95,6 +99,29 @@ footer {
     text-align: center;
 }
 
+@include large-screen {
+
+    .content {
+        width: $golden-ratio-large-screen-large - 1em;
+    }
+
+    aside {
+        @include box-sizing(border-box);
+        @include border-radius($aside-border-radius);
+        @include single-transition(all, 0.5s);
+
+        float: right;
+        width: $golden-ratio-large-screen-small - 1em;
+        margin-left: 2em;
+        margin-right: -$container-side-padding;
+        padding: 0.5em;
+        border: 1px solid #ccc;
+    }
+}
+
 dt {
     font-weight: bold;
+}
+dd {
+    margin-left: 1em;
 }
