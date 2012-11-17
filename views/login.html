@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block headtitle %}Kirjaudu sisään{% endblock %}
-{% block bodyclasses %}page-signup{% endblock %}
+{% block bodyclasses %}page-login{% endblock %}
 
 {% block container %}
 
@@ -12,14 +12,14 @@
 
   {% else %}
 
-    <form class="form-signin" action="/login" method="post">
-      <h2 class="form-signin-heading">Kirjaudu sisään</h2>
+    <form class="login-form" action="/login" method="post">
+      <h2>Kirjaudu sisään</h2>
 
-      <input type="text" class="input-block-level" name="username" placeholder="Tunnus" tabindex="1" required autofocus>
-      <input type="password" class="input-block-level" name="password" placeholder="Salasana" tabindex="2" required>
+      <input type="text" name="username" placeholder="Tunnus" tabindex="1" required autofocus>
+      <input type="password" name="password" placeholder="Salasana" tabindex="2" required>
 
       <input type="hidden" name="_csrf" value="{{ _csrf }}">
-      <button class="btn btn-large btn-primary" type="submit">Kirjaudu</button>
+      <button type="submit">Kirjaudu</button>
     </form>
 
   {% endif %}

@@ -4,7 +4,6 @@ $large-screen-breakpoint: 60em;
 $golden-ratio-large-screen-large: 1 / 1.61 * $large-screen-breakpoint;
 $golden-ratio-large-screen-small: $large-screen-breakpoint - $golden-ratio-large-screen-large;
 
-
 $page-bg-color: #fff;
 $page-color: #444;
 
@@ -23,3 +22,5 @@ $footer-color: #999;
 
 $aside-border-color: #ccc;
 $aside-border-radius: $header-border-radius;
+
+$input-border-radius: $header-border-radius;
