@@ -5,6 +5,14 @@ html, body {
 }
 body {
     overflow-y: scroll;
+
+    @include large-screen {
+        padding-top: $page-large-screen-top-padding
+    }
+}
+
+.page-index {
+
 }
 
 .container {
@@ -39,7 +47,6 @@ header {
     @include large-screen {
         @include border-radius($header-border-radius);
 
-        margin-top: 1em;
         padding: 0 1em;
         width: $large-screen-breakpoint;
     }
@@ -189,6 +196,7 @@ footer {
     padding: 0 0.5em;
     color: $footer-color;
     text-align: center;
+    font-size: 0.8em;
 }
 
 @include large-screen {
@@ -212,6 +220,14 @@ footer {
         h1 {
             margin-top: 0.3em;
         }
+    }
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
     }
 }
 
