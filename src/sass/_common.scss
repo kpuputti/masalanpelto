@@ -29,7 +29,7 @@ header {
     position: relative;
     width: 100%;
     margin: 0 auto;
-    padding: 0 0.5em;
+    padding: 0 0 0 0.5em;
     height: $header-height;
     line-height: $header-height;
     overflow: hidden;
@@ -104,18 +104,25 @@ header {
         margin: 0;
 
         @include large-screen {
-            display: inline-block;
+            @include inline-block;
         }
     }
 
     .menu {
+        @include inline-block;
 
-        display: inline-block;
         font-size: 2em;
         float: right;
+        padding: 0 0.5em;
+        border-left: 1px solid #252525;
 
         @include large-screen {
             display: none;
+        }
+
+        &:hover {
+            color: $header-color-hover;
+            background-color: $header-bg-color-hover;
         }
     }
 
@@ -128,7 +135,9 @@ header {
     }
     li {
         @include background-image(linear-gradient(top, #222, #111));
+
         background-color: #222;
+        border-bottom: 1px solid #252525;
     }
     a {
         @include box-sizing(border-box);

@@ -9,8 +9,10 @@
       <ul>
         {% for item in nav %}
           <li>
-            <a {% if item.active %}class="active"{% endif %}
-               href="{{ item.path }}">{{ item.name }}</a>
+            <a class="{% if item.active %}active {% endif %}"
+               href="{{ item.path }}">
+               {{ item.name }}
+             </a>
           </li>
         {% endfor %}
       </ul>
@@ -43,7 +45,11 @@
         </li>
       {% endfor %}
       <li>
-        <a href="/login">Kirjaudu sisään</a>
+        {% if loggedIn %}
+          <a href="/logout">Kirjaudu ulos</a>
+        {% else %}
+          <a href="/login">Kirjaudu sisään</a>
+        {% endif %}
       </li>
     </ul>
   </nav>
