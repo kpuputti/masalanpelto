@@ -1,8 +1,8 @@
 .login-form {
-    @include box-sizing(border-box);
-    @include transparent-box-shadow;
 
-    $max-width: 20em;
+    $max-width: 24em;
+
+    @include box-sizing(border-box);
 
     position: relative;
     margin: 0 auto;
@@ -10,7 +10,13 @@
     max-width: $max-width;
 
     @media only screen and (min-width: $max-width) {
-        margin-top: 2em;
+        @include transparent-box-shadow;
+
+        margin-top: 1em;
+    }
+
+    @include large-screen {
+        margin-top: 3em;
     }
 
     h2 {
