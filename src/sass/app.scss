@@ -4,6 +4,10 @@
 
 // Compass includes
 @import "compass/css3";
+@import "compass/utilities/general/clearfix";
+
+// Fonts
+@import "ligature-symbols";
 
 // App styles
 @import "vars";

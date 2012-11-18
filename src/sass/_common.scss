@@ -59,9 +59,16 @@ header {
         float: left;
         font-weight: bold;
         margin-right: 2em;
+        letter-spacing: 0.05em;
     }
 
     nav {
+
+        display: none;
+
+        @include large-screen {
+            display: block;
+        }
 
         ul {
             padding: 0;
@@ -92,8 +99,80 @@ header {
     }
 
     .user-actions {
+        display: none;
         float: right;
         margin: 0;
+
+        @include large-screen {
+            display: inline-block;
+        }
+    }
+
+    .menu {
+
+        display: inline-block;
+        font-size: 2em;
+        float: right;
+
+        @include large-screen {
+            display: none;
+        }
+    }
+
+}
+
+.bottom-nav {
+
+    ul {
+        padding: 0;
+    }
+    li {
+        @include background-image(linear-gradient(top, #222, #111));
+        background-color: #222;
+    }
+    a {
+        @include box-sizing(border-box);
+        @include single-transition(all, 0.3s);
+        @include text-shadow(rgba(0, 0, 0, 0.9) 1px 1px);
+
+        display: block;
+        height: $header-height;
+        line-height: $header-height;
+        color: $header-color;
+        padding: 0 0.5em;
+        text-decoration: none;
+
+        &.active {
+            color: $header-color-active;
+            background-color: $header-bg-color-active;
+        }
+        &:hover {
+            color: $header-color-hover;
+            background-color: $header-bg-color-hover;
+        }
+
+    }
+
+    @include large-screen {
+        display: none;
+    }
+}
+
+.back-to-top {
+
+    @include clearfix;
+
+    a {
+        color: #222;
+        float: right;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    span {
+        font-size: 1.4em;
     }
 }
 

@@ -16,6 +16,8 @@
       </ul>
     </nav>
 
+    <a href="#menu" class="menu lsf" title="Menu">&#xe08e;</a>
+
     <p class="user-actions">
       {% if loggedIn %}
         {{ username }} | <a href="/logout">Kirjaudu ulos</a>
@@ -28,7 +30,23 @@
 
   <div class="container">
     {% block content %}{% endblock %}
+
+    <p class="back-to-top"><a href="#top">Takaisin ylös <span class="lsf">&#xe00e;</span></a></p>
   </div>
+
+  <nav id="menu" class="bottom-nav">
+    <ul>
+      {% for item in nav %}
+        <li>
+          <a {% if item.active %}class="active"{% endif %}
+             href="{{ item.path }}">{{ item.name }}</a>
+        </li>
+      {% endfor %}
+      <li>
+        <a href="/login">Kirjaudu sisään</a>
+      </li>
+    </ul>
+  </nav>
 
   <hr>
   <footer>
