@@ -3,7 +3,7 @@
 {% block container %}
 
   <header>
-    <a class="home" href="/">Masalanpelto</a>
+    <a class="home" href="/">{{ siteTitle }}</a>
 
     <nav>
       <ul>
@@ -21,8 +21,8 @@
     <a href="#menu" class="menu lsf" title="Menu">&#xe08e;</a>
 
     <p class="user-actions">
-      {% if loggedIn %}
-        {{ username }} | <a href="/logout">Kirjaudu ulos</a>
+      {% if session.loggedIn %}
+        {{ session.username }} | <a href="/logout">Kirjaudu ulos</a>
       {% else %}
         <a href="/login">Kirjaudu sisään</a>
       {% endif %}
@@ -31,6 +31,7 @@
   </header>
 
   <div class="container">
+
     {% block content %}{% endblock %}
 
     <p class="back-to-top"><a href="#top">Takaisin ylös <span class="lsf">&#xe00e;</span></a></p>
@@ -45,7 +46,7 @@
         </li>
       {% endfor %}
       <li>
-        {% if loggedIn %}
+        {% if session.loggedIn %}
           <a href="/logout">Kirjaudu ulos</a>
         {% else %}
           <a href="/login">Kirjaudu sisään</a>
@@ -56,7 +57,7 @@
 
   <hr>
   <footer>
-    <p>Masalanpelto | <a href="http://kpuputti.fi/" rel="author">Kimmo Puputti</a>, 2012</p>
+    <p>{{ siteTitle }} | <a href="http://kpuputti.fi/" rel="author">Kimmo Puputti</a>, 2012</p>
   </footer>
 
 {% endblock %}

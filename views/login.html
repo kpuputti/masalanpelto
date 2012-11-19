@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 
-{% block headtitle %}Kirjaudu sisään{% endblock %}
 {% block bodyclasses %}page-login{% endblock %}
 
 {% block container %}
 
-  {% if loggedIn %}
+  {% if session.loggedIn %}
 
-    <p>Jo kirjautuneena tunnuksella {{ username }}.</p>
+    <p>Jo kirjautuneena tunnuksella {{ session.username }}.</p>
     <p><a href="/">Takaisin etusivulle</a></p>
 
   {% else %}
@@ -18,7 +17,7 @@
       <input type="text" name="username" placeholder="Tunnus" tabindex="1" required autofocus>
       <input type="password" name="password" placeholder="Salasana" tabindex="2" required>
 
-      <input type="hidden" name="_csrf" value="{{ _csrf }}">
+      <input type="hidden" name="_csrf" value="{{ session._csrf }}">
       <button type="submit">Kirjaudu</button>
     </form>
 
