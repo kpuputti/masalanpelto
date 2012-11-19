@@ -2,3 +2,4 @@ grunt.js
 src
 test
 public/dist/app.js
+src/s3-assets
