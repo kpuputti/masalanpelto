@@ -4,4 +4,17 @@
 
   <h1>Asiakirjat</h1>
 
+  {% if showUploadForm %}
+    <form action="/lisaa-asiakirja" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Uusi asiakirja</legend>
+        <input type="text" name="name" placeholder="Nimi" required>
+        <textarea name="description" placeholder="Kuvaus" required></textarea>
+        <input type="file" name="userfile" required>
+        <input type="hidden" name="_csrf" value="{{ session._csrf }}">
+        <button type="submit">Lähetä</button>
+      </fieldset>
+    </form>
+  {% endif %}
+
 {% endblock %}

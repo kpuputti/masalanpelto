@@ -238,6 +238,15 @@ dd {
     margin-left: 1em;
 }
 
+fieldset {
+    border: 1px solid #ddd;
+    padding: 1em 0.5em 0.5em 0.5em;
+
+    & > legend {
+        margin-left: 2em;
+    }
+}
+
 input {
     @include box-sizing(border-box);
     @include border-radius($input-border-radius);
@@ -250,12 +259,33 @@ input {
     color: #555;
 
     -webkit-appearance: none; // Remove default inset shadow for iOS
-}
-input:focus {
-    @include single-transition(all, 0.3s);
-    @include box-shadow(0 0 0.8em 0 rgba(0, 0, 255, 0.3));
 
-    outline: none;
+    &:focus {
+        @include single-transition(all, 0.3s);
+        @include box-shadow(0 0 0.8em 0 rgba(0, 0, 255, 0.3));
+
+        outline: none;
+    }
+}
+
+textarea {
+    @include box-sizing(border-box);
+    @include border-radius($input-border-radius);
+
+    display: block;
+    width: 100%;
+    min-height: 10em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 0.5em;
+
+    &:focus {
+        @include single-transition(all, 0.3s);
+        @include box-shadow(0 0 0.8em 0 rgba(0, 0, 255, 0.3));
+
+        outline: none;
+    }
 }
 
 button {
