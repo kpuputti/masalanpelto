@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+  <h1>Asiakirjat</h1>
+
+  <form action="/asiakirjat/uusi" method="post" enctype="multipart/form-data">
+    <fieldset>
+      <legend>Uusi asiakirja</legend>
+      <input type="text" name="name" placeholder="Nimi" required>
+      <textarea name="description" placeholder="Kuvaus"></textarea>
+      <input type="file" name="userfile" required>
+      <input type="hidden" name="_csrf" value="{{ session._csrf }}">
+      <button type="submit">Lähetä</button>
+    </fieldset>
+  </form>
+
+{% endblock %}
