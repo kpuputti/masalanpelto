@@ -22,9 +22,9 @@
 
     <p class="user-actions">
       {% if session.loggedIn %}
-        {{ session.username }} | <a href="/logout">Kirjaudu ulos</a>
+        {{ session.username }} | <a href="/kirjaudu-ulos">Kirjaudu ulos</a>
       {% else %}
-        <a href="/login">Kirjaudu sisään</a>
+        <a href="/kirjaudu-sisaan">Kirjaudu sisään</a>
       {% endif %}
     </p>
 
@@ -47,9 +47,9 @@
       {% endfor %}
       <li>
         {% if session.loggedIn %}
-          <a href="/logout">Kirjaudu ulos</a>
+          <a href="/kirjaudu-ulos">Kirjaudu ulos</a>
         {% else %}
-          <a href="/login">Kirjaudu sisään</a>
+          <a href="/kirjaudu-sisaan">Kirjaudu sisään</a>
         {% endif %}
       </li>
     </ul>
