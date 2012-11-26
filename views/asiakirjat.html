@@ -9,7 +9,7 @@
       <fieldset>
         <legend>Uusi asiakirja</legend>
         <input type="text" name="name" placeholder="Nimi" required>
-        <textarea name="description" placeholder="Kuvaus" required></textarea>
+        <textarea name="description" placeholder="Kuvaus"></textarea>
         <input type="file" name="userfile" required>
         <input type="hidden" name="_csrf" value="{{ session._csrf }}">
         <button type="submit">Lähetä</button>
