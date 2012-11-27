@@ -23,6 +23,24 @@ Install dependencies:
 
     npm install
 
+## Environment
+
+Environment can be configured with the following vars:
+
+    PORT (optional)
+    COOKIE_SECRET (optional)
+    SESSION_SECRET (optional)
+    GOOGLE_ANALYTICS_TRACKING_ID (optional)
+    PASSWORD_HASH_ASUKAS (required)
+    PASSWORD_HASH_HALLITUS (required)
+    PASSWORD_HASH_ADMIN (required)
+    AWS_ACCESS_KEY_ID (required)
+    AWS_SECRET_ACCESS_KEY (required)
+    S3_BUCKET_NAME (required)
+
+For local development with Foreman, these can be specified in the `.env` file
+ignored by Git.
+
 ## Running locally
 
 Build static assets (public JavaScript + SCSS files):
