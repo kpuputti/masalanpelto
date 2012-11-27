@@ -32,6 +32,14 @@
 
   <div class="container">
 
+    <section class="messages">
+      <ul>
+        {% for message in messages %}
+          <li class="{{ message.type }}">{{ message.msg }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+
     {% block content %}{% endblock %}
 
     <p class="back-to-top"><a href="#top">Takaisin ylös <span class="lsf">&#xe00e;</span></a></p>

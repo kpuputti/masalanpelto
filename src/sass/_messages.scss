@@ -1,0 +1,26 @@
+.messages {
+
+    ul {
+        padding: 0;
+        list-style: none
+    }
+
+    li {
+        @include border-radius($message-border-radius);
+
+        padding: 0.5em;
+    }
+
+    .info {
+        background-color: $info-bg-color;
+        color: $info-color;
+        border: 1px solid $info-border-color;
+    }
+
+    .error {
+        background-color: $error-bg-color;
+        color: $error-color;
+        border: 1px solid $error-border-color;
+    }
+
+}

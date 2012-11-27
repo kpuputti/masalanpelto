@@ -14,6 +14,14 @@
     <form class="login-form" action="/kirjaudu-sisaan" method="post">
       <h2>Kirjaudu sisään</h2>
 
+      <section class="messages">
+        <ul>
+          {% for message in messages %}
+            <li class="{{ message.type }}">{{ message.msg }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+
       <input type="text" name="username" placeholder="Tunnus" tabindex="1" required autofocus>
       <input type="password" name="password" placeholder="Salasana" tabindex="2" required>
 
