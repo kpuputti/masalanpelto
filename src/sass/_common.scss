@@ -307,3 +307,21 @@ button {
 button:hover {
     background-image: none;
 }
+
+.file-listing {
+    list-style: none;
+    padding: 0;
+
+    li {
+        @include border-radius($file-item-border-radius);
+
+        border: 1px solid #ccc;
+        margin-bottom: 1em;
+        padding: 0.5em;
+    }
+
+    .title {
+        display: block;
+        font-weight: bold;
+    }
+}

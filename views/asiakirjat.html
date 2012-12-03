@@ -8,4 +8,33 @@
     <p><a href="/asiakirjat/uusi">Lisää uusi asiakirja</a></p>
   {% endif %}
 
+  <ul class="file-listing">
+    {% for file in files %}
+      <li>
+        <span class="title">{{ file.name }}</span>
+
+        <dl>
+          <dt>Tila</dt>
+          <dd>{{ file.status }}</dd>
+
+          <dt>Lisätty</dt>
+          <dd>{{ file.dateAdded }}</dd>
+
+          <dt>Lisääjä</dt>
+          <dd>{{ file.addedBy }}</dd>
+
+          <dt>Tyyppi</dt>
+          <dd>{{ file.type }}</dd>
+
+          <dt>Alkuperäinen tiedosto</dt>
+          <dd>{{ file.originalName }}</dd>
+
+          <dt>Koko</dt>
+          <dd>{{ file.size }} tavua</dd>
+        </dl>
+
+      </li>
+    {% endfor %}
+  </ul>
+
 {% endblock %}
