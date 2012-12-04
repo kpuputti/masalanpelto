@@ -1,6 +1,8 @@
 /*global module:false*/
 module.exports = function (grunt) {
 
+    'use strict';
+
     grunt.initConfig({
         pkg: '<json:package.json>',
         meta: {
@@ -64,7 +66,7 @@ module.exports = function (grunt) {
                 quotmark: 'single',
                 undef: true,
                 unused: true,
-                strict: false,
+                strict: true,
                 trailing: true,
 
                 // environment
@@ -73,9 +75,7 @@ module.exports = function (grunt) {
                 node: true
 
             },
-            globals: {
-                jQuery: true
-            }
+            globals: {}
         },
         uglify: {}
     });
