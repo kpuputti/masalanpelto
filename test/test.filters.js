@@ -5,7 +5,7 @@
 var chai = require('chai');
 chai.should();
 
-var filters = require('../lib/filters.js');
+var filters = require('../lib/filters');
 
 describe('Custom Swig template filters', function () {
 
