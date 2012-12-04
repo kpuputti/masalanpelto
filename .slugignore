@@ -1,5 +1,4 @@
 grunt.js
+.jshintrc
 src
 test
-public/dist/app.js
-src/s3-assets
