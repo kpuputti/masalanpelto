@@ -53,9 +53,16 @@ Build as files change:
 
 Start app:
 
-    foreman start
+    npm start
 
 Now the app is running at `localhost:5000`.
+
+## Testing
+
+The test suite uses [Mocha](http://visionmedia.github.com/mocha/) and
+[Chai](http://chaijs.com/) assertions. The tests can be run with:
+
+    npm test
 
 ## Deploying
 

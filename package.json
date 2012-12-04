@@ -8,6 +8,10 @@
         "type": "git",
         "url": "git@github.com:kpuputti/masalanpelto.git"
     },
+    "scripts": {
+        "start": "foreman start",
+        "test": "foreman run node_modules/mocha/bin/mocha --require chai --growl -R spec test/*.js"
+    },
     "dependencies": {
         "express": "3.0.x",
         "swig": "0.13.x",
@@ -20,7 +24,9 @@
         "mime": "1.2.x"
     },
     "devDependencies": {
-        "grunt-compass": "0.3.x"
+        "grunt-compass": "latest",
+        "mocha": "latest",
+        "chai": "latest"
     },
     "licence": "MIT",
     "private": true,
