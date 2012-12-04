@@ -26,7 +26,8 @@
     "devDependencies": {
         "grunt-compass": "latest",
         "mocha": "latest",
-        "chai": "latest"
+        "chai": "latest",
+        "supertest": "latest"
     },
     "licence": "MIT",
     "private": true,
