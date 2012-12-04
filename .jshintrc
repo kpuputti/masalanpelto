@@ -1,6 +1,4 @@
 {
-    // enforcing options
-
     "camelcase": true,
     "curly": true,
     "eqeqeq": true,
@@ -14,10 +12,8 @@
     "quotmark": "single",
     "undef": true,
     "unused": true,
-    "strict": false,
+    "strict": true,
     "trailing": true,
-
-    // environment
 
     "devel": true,
     "node": true
