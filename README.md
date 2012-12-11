@@ -28,6 +28,8 @@ Install dependencies:
 Environment can be configured with the following vars:
 
     PORT (optional)
+    NODE_ENV (optional)
+    MONGODB_URL (required)
     COOKIE_SECRET (optional)
     SESSION_SECRET (optional)
     GOOGLE_ANALYTICS_TRACKING_ID (optional)

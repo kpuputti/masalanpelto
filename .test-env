@@ -1,4 +1,5 @@
 NODE_ENV=testrunner
+MONGODB_URL=mongodb://localhost/masalanpelto-testrunner
 TEST_PASSWORD_ASUKAS=asukas
 TEST_PASSWORD_HALLITUS=hallitus
 TEST_PASSWORD_ADMIN=admin
