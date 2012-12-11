@@ -1,5 +1,7 @@
 # Masalanpelto
 
+[![Build Status](https://travis-ci.org/kpuputti]/masalanpelto.png)](https://travis-ci.org/kpuputti/masalanpelto)
+
 [Express](http://expressjs.com/) app for Masalanpelto housing association.
 
 The app is running on Heroku at http://masalanpelto.herokuapp.com/
