@@ -1,6 +1,6 @@
 # Masalanpelto
 
-[![Build Status](https://travis-ci.org/kpuputti]/masalanpelto.png)](https://travis-ci.org/kpuputti/masalanpelto)
+[![Build Status](https://travis-ci.org/kpuputti/masalanpelto.png)](https://travis-ci.org/kpuputti/masalanpelto)
 
 [Express](http://expressjs.com/) app for Masalanpelto housing association.
 
