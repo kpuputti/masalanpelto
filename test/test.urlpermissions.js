@@ -141,3 +141,90 @@ describe('User asukas', function () {
     });
 
 });
+
+describe('User hallitus', function () {
+
+    it('should see allowed URLs', function (done) {
+
+        var username = 'hallitus';
+        var loggedInNavItems = ['Etusivu', 'Tietoa', 'Asiakirjat', 'Asukkaille', 'Hallitus'];
+
+        var browser = new zombie.Browser({
+            site: APP_URL
+        });
+
+        function visit(path) {
+            return function () {
+                return browser.visit(path);
+            };
+        }
+
+        browser
+            .visit('/')
+            .then(function () {
+
+                // Make sure we're logged out
+                expect(browser.text('.user-actions')).to.equal('Kirjaudu sisään');
+
+                // Login
+                return helpers.loginAs(username, browser);
+            })
+            .then(function () {
+
+                // Assert header navigation links
+                expect(browser.text('header nav a')).to.equal(loggedInNavItems.join(' '));
+            })
+            .then(visit('/tietoa'))
+            .then(visit('/asiakirjat'))
+            .then(visit('/asiakirjat/uusi'))
+            .then(visit('/asukkaille'))
+            .then(visit('/hallitus'))
+            .then(done)
+            .fail(done);
+    });
+
+});
+
+describe('User admin', function () {
+
+    it('should see allowed URLs', function (done) {
+
+        var username = 'admin';
+        var loggedInNavItems = ['Etusivu', 'Tietoa', 'Asiakirjat', 'Asukkaille', 'Hallitus', 'Test', 'Admin'];
+
+        var browser = new zombie.Browser({
+            site: APP_URL
+        });
+
+        function visit(path) {
+            return function () {
+                return browser.visit(path);
+            };
+        }
+
+        browser
+            .visit('/')
+            .then(function () {
+
+                // Make sure we're logged out
+                expect(browser.text('.user-actions')).to.equal('Kirjaudu sisään');
+
+                // Login
+                return helpers.loginAs(username, browser);
+            })
+            .then(function () {
+
+                // Assert header navigation links
+                expect(browser.text('header nav a')).to.equal(loggedInNavItems.join(' '));
+            })
+            .then(visit('/tietoa'))
+            .then(visit('/asiakirjat'))
+            .then(visit('/asiakirjat/uusi'))
+            .then(visit('/asukkaille'))
+            .then(visit('/hallitus'))
+            .then(visit('/admin'))
+            .then(done)
+            .fail(done);
+    });
+
+});
