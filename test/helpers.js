@@ -8,7 +8,7 @@ exports.loginAs = function (username, browser) {
 
     var password = process.env['TEST_PASSWORD_' + username.toUpperCase()];
     if (!password) {
-        return deferred.reject(new Error('Test password not found for user: ' + username));
+        throw new Error('Test password not found for user: ' + username);
     }
 
     browser
