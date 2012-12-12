@@ -4,14 +4,15 @@ node_js:
 services:
   - mongodb
 script: ./node_modules/mocha/bin/mocha --growl --reporter spec test/test.*.js
-env: NODE_ENV=travisci \
-     MONGODB_URL="mongodb://127.0.0.1/masalanpelto-travisci" \
-     TEST_PASSWORD_ASUKAS=asukas \
-     TEST_PASSWORD_HALLITUS=hallitus \
-     TEST_PASSWORD_ADMIN=admin \
-     PASSWORD_HASH_ASUKAS="$2a$10$492Rsoh3aLh2GRtIr00nO.yFvEed7l9v6mKMF9bZDLRX2rfYsqkdS" \
-     PASSWORD_HASH_HALLITUS="$2a$10$57PwjRXrYyKSZb.SrKUgQ.VvHgFBurBRMISOHvUBZUzpGBnUnVoJK" \
-     PASSWORD_HASH_ADMIN="$2a$10$V00Ktkj/xw.6WRTmMLBA8upnQ48P7LExLUuSj.IY1o§XswtylCuq." \
-     AWS_ACCESS_KEY_ID=invalid \
-     AWS_SECRET_ACCESS_KEY=invalid \
-     S3_BUCKET_NAME=invalid
+env:
+  - NODE_ENV=travisci
+  - MONGODB_URL="mongodb://127.0.0.1/masalanpelto-travisci"
+  - TEST_PASSWORD_ASUKAS=asukas
+  - TEST_PASSWORD_HALLITUS=hallitus
+  - TEST_PASSWORD_ADMIN=admin
+  - PASSWORD_HASH_ASUKAS="$2a$10$492Rsoh3aLh2GRtIr00nO.yFvEed7l9v6mKMF9bZDLRX2rfYsqkdS"
+  - PASSWORD_HASH_HALLITUS="$2a$10$57PwjRXrYyKSZb.SrKUgQ.VvHgFBurBRMISOHvUBZUzpGBnUnVoJK"
+  - PASSWORD_HASH_ADMIN="$2a$10$V00Ktkj/xw.6WRTmMLBA8upnQ48P7LExLUuSj.IY1o§XswtylCuq."
+  - AWS_ACCESS_KEY_ID=invalid
+  - AWS_SECRET_ACCESS_KEY=invalid
+  - S3_BUCKET_NAME=invalid
