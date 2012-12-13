@@ -185,7 +185,7 @@ describe('User hallitus', function () {
 
 });
 
-describe('User admin', function () {
+describe.only('User admin', function () {
 
     it('should see allowed URLs', function (done) {
 
@@ -223,6 +223,18 @@ describe('User admin', function () {
             .then(visit('/asukkaille'))
             .then(visit('/hallitus'))
             .then(visit('/admin'))
+            .then(visit('kirjaudu-ulos'))
+            .then(function () {
+
+                expect(browser.location.pathname).to.equal('/');
+
+                return browser.visit('/kirjaudu-sisaan');
+
+            })
+            .then(function () {
+                expect(browser.location.pathname).to.equal('/kirjaudu-sisaan');
+                expect(browser.text('h2')).to.equal('Kirjaudu sisään');
+            })
             .then(done)
             .fail(done);
     });
