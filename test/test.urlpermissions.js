@@ -156,6 +156,7 @@ describe('User asukas', function () {
         browser.visit('/')
             .then(loginAs('asukas'))
             .then(expectForbidden('/asiakirjat/uusi'))
+            .then(expectForbidden('/hallitus'))
             .then(expectForbidden('/admin'))
             .then(expectForbidden('/test'))
             .then(done)
