@@ -107,10 +107,7 @@ describe('User asukas', function () {
 
         var username = 'asukas';
         var loggedInNavItems = ['Etusivu', 'Tietoa', 'Asiakirjat', 'Asukkaille'];
-
-        var browser = new zombie.Browser({
-            site: APP_URL
-        });
+        var browser = new zombie.Browser({ site: APP_URL });
 
         function visit(path) {
             return function () {
@@ -140,6 +137,31 @@ describe('User asukas', function () {
             .fail(done);
     });
 
+    it('should not see disallowed URLs', function (done) {
+
+        var browser = new zombie.Browser({ site: APP_URL});
+
+        function loginAs(username) {
+            return function () {
+                return helpers.loginAs(username, browser);
+            };
+        }
+
+        function expectForbidden(url) {
+            return function () {
+                return helpers.expectForbidden(url, browser);
+            };
+        }
+
+        browser.visit('/')
+            .then(loginAs('asukas'))
+            .then(expectForbidden('/asiakirjat/uusi'))
+            .then(expectForbidden('/admin'))
+            .then(expectForbidden('/test'))
+            .then(done)
+            .fail(done);
+    });
+
 });
 
 describe('User hallitus', function () {
@@ -148,10 +170,7 @@ describe('User hallitus', function () {
 
         var username = 'hallitus';
         var loggedInNavItems = ['Etusivu', 'Tietoa', 'Asiakirjat', 'Asukkaille', 'Hallitus'];
-
-        var browser = new zombie.Browser({
-            site: APP_URL
-        });
+        var browser = new zombie.Browser({ site: APP_URL });
 
         function visit(path) {
             return function () {
@@ -183,6 +202,30 @@ describe('User hallitus', function () {
             .fail(done);
     });
 
+    it('should not see disallowed URLs', function (done) {
+
+        var browser = new zombie.Browser({ site: APP_URL});
+
+        function loginAs(username) {
+            return function () {
+                return helpers.loginAs(username, browser);
+            };
+        }
+
+        function expectForbidden(url) {
+            return function () {
+                return helpers.expectForbidden(url, browser);
+            };
+        }
+
+        browser.visit('/')
+            .then(loginAs('hallitus'))
+            .then(expectForbidden('/admin'))
+            .then(expectForbidden('/test'))
+            .then(done)
+            .fail(done);
+    });
+
 });
 
 describe('User admin', function () {
@@ -191,10 +234,7 @@ describe('User admin', function () {
 
         var username = 'admin';
         var loggedInNavItems = ['Etusivu', 'Tietoa', 'Asiakirjat', 'Asukkaille', 'Hallitus', 'Test', 'Admin'];
-
-        var browser = new zombie.Browser({
-            site: APP_URL
-        });
+        var browser = new zombie.Browser({ site: APP_URL });
 
         function visit(path) {
             return function () {
@@ -223,6 +263,7 @@ describe('User admin', function () {
             .then(visit('/asukkaille'))
             .then(visit('/hallitus'))
             .then(visit('/admin'))
+            .then(visit('/test'))
             .then(visit('kirjaudu-ulos'))
             .then(function () {
 
