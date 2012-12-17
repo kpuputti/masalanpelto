@@ -29,3 +29,20 @@ exports.loginAs = function (username, browser) {
 
     return deferred.promise;
 };
+
+exports.expectForbidden = function (url, browser) {
+    var deferred = Q.defer();
+
+    browser
+        .visit(url)
+        .then(deferred.reject)
+        .fail(function () {
+            if (browser.statusCode === 403) {
+                deferred.resolve();
+            } else {
+                deferred.reject();
+            }
+        });
+
+    return deferred.promise;
+};
