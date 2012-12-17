@@ -185,7 +185,7 @@ describe('User hallitus', function () {
 
 });
 
-describe.only('User admin', function () {
+describe('User admin', function () {
 
     it('should see allowed URLs', function (done) {
 
