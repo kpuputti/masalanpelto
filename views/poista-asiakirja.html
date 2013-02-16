@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+  <h1>Varmista tiedoston poisto</h1>
+
+  <p>Haluatko varmasti poistaa asiakirjan: {{ name }}?</p>
+
+  <form action="/asiakirjat/{{ _id }}/poista" method="post">
+    <input type="hidden" name="_csrf" value="{{ session._csrf }}">
+    <input class="inline" type="submit" value="Poista">
+  </form>
+
+  <p><a href="/asiakirjat/{{ _id }}">Palaa takaisin</a></p>
+
+{% endblock %}

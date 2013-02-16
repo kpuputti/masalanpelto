@@ -260,6 +260,11 @@ input {
 
     -webkit-appearance: none; // Remove default inset shadow for iOS
 
+    &.inline {
+        width: auto;
+        display: inline-block;
+    }
+
     &[type=file] {
         padding: 0;
     }
@@ -290,6 +295,11 @@ textarea {
 
         outline: none;
     }
+}
+
+select {
+    display: block;
+    margin: 0.5em 0;
 }
 
 button {

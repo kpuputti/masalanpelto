@@ -11,11 +11,14 @@
   <ul class="file-listing">
     {% for file in files %}
       <li>
-        <span class="title">{{ file.name }}</span>
+        <span class="title"><a href="/asiakirjat/{{ file.id }}">{{ file.name }}</a></span>
 
         <dl>
           <dt>Tila</dt>
           <dd>{{ file.status }}</dd>
+
+          <dt>Näkyvyys</dt>
+          <dd>{{ file.visibility }}</dd>
 
           <dt>Lisätty</dt>
           <dd>{{ file.dateAdded }}</dd>
