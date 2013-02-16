@@ -118,6 +118,7 @@ header {
         float: right;
         padding: 0 0.5em;
         border-left: 1px solid #252525;
+        color: $header-color;
 
         @include large-screen {
             display: none;
@@ -305,6 +306,10 @@ button {
     margin: 0;
     padding: 1em;
     border: 1px solid #333;
+
+    .lsf {
+        color: #eee;
+    }
 }
 button:hover {
     background-image: none;
@@ -319,14 +324,48 @@ button:hover {
 
         border: 1px solid #ccc;
         margin-bottom: 1em;
+    }
+
+    a {
+        display: block;
         padding: 0.5em;
+        color: $page-color;
+
+        &:hover {
+            text-decoration: none;
+            background-color: #eee;
+        }
     }
 
-    h3 {
-        margin: 0.5em 0;
+    .title {
+        display: block;
+        font-weight: bold;
+        font-size: 1.2em;
+        margin: 0 0 0.5em 0;
     }
-
+    .info {
+        display: block;
+        font-size: 0.8em;
+        color: lighten($page-color, 20%);
+    }
     .description {
         display: block;
+        margin-top: 0.5em;
+    }
+
+    @include large-screen {
+
+        .info-wrapper {
+            display: block;
+            @include clearfix;
+        }
+        .title {
+            display: inline-block;
+            float: left;
+        }
+        .info {
+            display: inline-block;
+            float: right;
+        }
     }
 }

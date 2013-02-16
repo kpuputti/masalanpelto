@@ -4,53 +4,53 @@
 
   <h1>{{ file.name }}</h1>
 
-  <p>{{ description }}</p>
+  <p><a href="{{ s3Url }}" target="_blank"><span class="lsf">&#xe046;</span> Avaa asiakirja</a></p>
 
-  <p><a href="{{ s3Url }}" target="_blank">Avaa asiakirja</a></p>
+  <p>{{ file.description }}</p>
 
-    <dl>
-      <dt>Tila</dt>
-      <dd>{{ file.status }}</dd>
+  <dl>
+    <dt>Tila</dt>
+    <dd>{{ file.status }}</dd>
 
-      <dt>Näkyvyys</dt>
-      <dd>{{ file.visibility }}</dd>
+    <dt>Näkyvyys</dt>
+    <dd>{{ file.visibility }}</dd>
 
-      <dt>Lisätty</dt>
-      <dd>{{ file.dateAdded }}</dd>
+    <dt>Lisätty</dt>
+    <dd>{{ file.dateAdded }}</dd>
 
-      <dt>Lisääjä</dt>
-      <dd>{{ file.addedBy }}</dd>
+    <dt>Lisääjä</dt>
+    <dd>{{ file.addedBy }}</dd>
 
-      <dt>Tyyppi</dt>
-      <dd>{{ file.type }}</dd>
+    <dt>Tyyppi</dt>
+    <dd>{{ file.type }}</dd>
 
-      <dt>Alkuperäinen tiedosto</dt>
-      <dd>{{ file.originalName }}</dd>
+    <dt>Alkuperäinen tiedosto</dt>
+    <dd>{{ file.originalName }}</dd>
 
-      <dt>Koko</dt>
-      <dd>{{ file.size|filesize }}</dd>
-    </dl>
+    <dt>Koko</dt>
+    <dd>{{ file.size|filesize }}</dd>
+  </dl>
 
-    {% if canChangeVisibility %}
-      <form action="/asiakirjat/{{ file._id }}" method="post">
-        <fieldset>
-          <legend>Muuta asiakirjan näkyvyys</legend>
-          <select name="visibility">
-            {% for visibility in possibleVisibilities %}
-              <option value="{{ visibility.name }}"
-                      {% if visibility.active %}selected{% endif %}>
-                      {{ visibility.name }}
-              </option>
-            {% endfor %}
-          </select>
-          <input type="hidden" name="_csrf" value="{{ session._csrf }}">
-          <input class="inline" type="submit" value="Muuta">
-        </fieldset>
-      </form>
-    {% endif %}
+  {% if canChangeVisibility %}
+    <form action="/asiakirjat/{{ file._id }}" method="post">
+      <fieldset>
+        <legend>Muuta asiakirjan näkyvyys</legend>
+        <select name="visibility">
+          {% for visibility in possibleVisibilities %}
+            <option value="{{ visibility.name }}"
+                    {% if visibility.active %}selected{% endif %}>
+                    {{ visibility.name }}
+            </option>
+          {% endfor %}
+        </select>
+        <input type="hidden" name="_csrf" value="{{ session._csrf }}">
+        <input class="inline" type="submit" value="Muuta">
+      </fieldset>
+    </form>
+  {% endif %}
 
-    {% if canRemoveFile %}
-      <p><a href="/asiakirjat/{{ file._id }}/poista">Poista asiakirja</a></p>
-    {% endif %}
+  {% if canRemoveFile %}
+    <p><a href="/asiakirjat/{{ file._id }}/poista"><span class="lsf">&#xe12c;</span> Poista asiakirja</a></p>
+  {% endif %}
 
 {% endblock %}

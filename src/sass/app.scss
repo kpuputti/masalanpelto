@@ -6,11 +6,13 @@
 @import "compass/css3";
 @import "compass/utilities/general/clearfix";
 
+// Variables
+@import "vars";
+
 // Fonts
 @import "ligature-symbols";
 
-// App styles
-@import "vars";
+// Rest of app styles
 @import "mixins";
 @import "common";
 @import "messages";
