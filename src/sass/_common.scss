@@ -320,20 +320,21 @@ button:hover {
     padding: 0;
 
     li {
-        @include border-radius($file-item-border-radius);
-
-        border: 1px solid #ccc;
-        margin-bottom: 1em;
+        border-top: 1px solid #ccc;
     }
 
     a {
         display: block;
-        padding: 0.5em;
+        padding: 1em 0.5em;
         color: $page-color;
 
         &:hover {
             text-decoration: none;
             background-color: #eee;
+
+            .title {
+                text-decoration: underline;
+            }
         }
     }
 
