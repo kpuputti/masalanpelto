@@ -11,31 +11,8 @@
   <ul class="file-listing">
     {% for file in files %}
       <li>
-        <span class="title"><a href="/asiakirjat/{{ file.id }}">{{ file.name }}</a></span>
-
-        <dl>
-          <dt>Tila</dt>
-          <dd>{{ file.status }}</dd>
-
-          <dt>Näkyvyys</dt>
-          <dd>{{ file.visibility }}</dd>
-
-          <dt>Lisätty</dt>
-          <dd>{{ file.dateAdded }}</dd>
-
-          <dt>Lisääjä</dt>
-          <dd>{{ file.addedBy }}</dd>
-
-          <dt>Tyyppi</dt>
-          <dd>{{ file.type }}</dd>
-
-          <dt>Alkuperäinen tiedosto</dt>
-          <dd>{{ file.originalName }}</dd>
-
-          <dt>Koko</dt>
-          <dd>{{ file.size|filesize }}</dd>
-        </dl>
-
+        <h3><a href="/asiakirjat/{{ file.id }}">{{ file.name }}</a></h3>
+        <span class="description">{{ file.description }}</span>
       </li>
     {% endfor %}
   </ul>

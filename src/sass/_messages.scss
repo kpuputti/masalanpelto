@@ -1,9 +1,7 @@
 .messages {
 
-    ul {
-        padding: 0;
-        list-style: none
-    }
+    padding: 0;
+    list-style: none;
 
     li {
         @include border-radius($message-border-radius);

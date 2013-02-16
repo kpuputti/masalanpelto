@@ -2,37 +2,37 @@
 
 {% block content %}
 
-  <h1>{{ name }}</h1>
+  <h1>{{ file.name }}</h1>
 
   <p>{{ description }}</p>
 
-  <p><a href="{{ s3Url }}" target="_blank">Lataa tiedosto</a></p>
+  <p><a href="{{ s3Url }}" target="_blank">Avaa asiakirja</a></p>
 
     <dl>
       <dt>Tila</dt>
-      <dd>{{ status }}</dd>
+      <dd>{{ file.status }}</dd>
 
       <dt>Näkyvyys</dt>
-      <dd>{{ visibility }}</dd>
+      <dd>{{ file.visibility }}</dd>
 
       <dt>Lisätty</dt>
-      <dd>{{ dateAdded }}</dd>
+      <dd>{{ file.dateAdded }}</dd>
 
       <dt>Lisääjä</dt>
-      <dd>{{ addedBy }}</dd>
+      <dd>{{ file.addedBy }}</dd>
 
       <dt>Tyyppi</dt>
-      <dd>{{ type }}</dd>
+      <dd>{{ file.type }}</dd>
 
       <dt>Alkuperäinen tiedosto</dt>
-      <dd>{{ originalName }}</dd>
+      <dd>{{ file.originalName }}</dd>
 
       <dt>Koko</dt>
-      <dd>{{ size|filesize }}</dd>
+      <dd>{{ file.size|filesize }}</dd>
     </dl>
 
     {% if canChangeVisibility %}
-      <form action="/asiakirjat/{{ _id }}" method="post">
+      <form action="/asiakirjat/{{ file._id }}" method="post">
         <fieldset>
           <legend>Muuta asiakirjan näkyvyys</legend>
           <select name="visibility">
@@ -50,7 +50,7 @@
     {% endif %}
 
     {% if canRemoveFile %}
-      <p><a href="/asiakirjat/{{ _id }}/poista">Poista asiakirja</a></p>
+      <p><a href="/asiakirjat/{{ file._id }}/poista">Poista asiakirja</a></p>
     {% endif %}
 
 {% endblock %}

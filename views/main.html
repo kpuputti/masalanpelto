@@ -32,13 +32,11 @@
 
   <div class="container">
 
-    <section class="messages">
-      <ul>
-        {% for message in messages %}
-          <li class="{{ message.type }}">{{ message.msg }}</li>
-        {% endfor %}
-      </ul>
-    </section>
+    <ul class="messages">
+      {% for message in messages %}
+        <li class="{{ message.type }}">{{ message.msg }}</li>
+      {% endfor %}
+    </ul>
 
     {% block content %}{% endblock %}
 

@@ -4,13 +4,13 @@
 
   <h1>Varmista tiedoston poisto</h1>
 
-  <p>Haluatko varmasti poistaa asiakirjan: {{ name }}?</p>
+  <p>Haluatko varmasti poistaa asiakirjan: {{ file.name }}?</p>
 
-  <form action="/asiakirjat/{{ _id }}/poista" method="post">
+  <form action="/asiakirjat/{{ file._id }}/poista" method="post">
     <input type="hidden" name="_csrf" value="{{ session._csrf }}">
     <input class="inline" type="submit" value="Poista">
   </form>
 
-  <p><a href="/asiakirjat/{{ _id }}">Palaa takaisin</a></p>
+  <p><a href="/asiakirjat/{{ file._id }}">Palaa takaisin</a></p>
 
 {% endblock %}
