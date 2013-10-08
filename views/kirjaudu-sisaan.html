@@ -25,7 +25,7 @@
       <input type="text" name="username" placeholder="Tunnus" tabindex="1" required autofocus>
       <input type="password" name="password" placeholder="Salasana" tabindex="2" required>
 
-      <input type="hidden" name="_csrf" value="{{ session._csrf }}">
+      <input type="hidden" name="_csrf" value="{{ csrfToken }}">
       <button type="submit">Kirjaudu</button>
     </form>
 

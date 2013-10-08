@@ -4,7 +4,7 @@
 
 var expect = require('chai').expect;
 var superagent = require('superagent');
-var zombie = require('zombie');
+var Browser = require('zombie');
 var helpers = require('./helpers');
 var app = require('../lib/app');
 
@@ -107,7 +107,7 @@ describe('User asukas', function () {
 
         var username = 'asukas';
         var loggedInNavItems = ['Etusivu', 'Tietoa', 'Asiakirjat', 'Asukkaille'];
-        var browser = new zombie.Browser({ site: APP_URL });
+        var browser = new Browser({ site: APP_URL });
 
         function visit(path) {
             return function () {
@@ -139,7 +139,7 @@ describe('User asukas', function () {
 
     it('should not see disallowed URLs', function (done) {
 
-        var browser = new zombie.Browser({ site: APP_URL});
+        var browser = new Browser({ site: APP_URL});
 
         function loginAs(username) {
             return function () {
@@ -171,7 +171,7 @@ describe('User hallitus', function () {
 
         var username = 'hallitus';
         var loggedInNavItems = ['Etusivu', 'Tietoa', 'Asiakirjat', 'Asukkaille', 'Hallitus'];
-        var browser = new zombie.Browser({ site: APP_URL });
+        var browser = new Browser({ site: APP_URL });
 
         function visit(path) {
             return function () {
@@ -205,7 +205,7 @@ describe('User hallitus', function () {
 
     it('should not see disallowed URLs', function (done) {
 
-        var browser = new zombie.Browser({ site: APP_URL});
+        var browser = new Browser({ site: APP_URL});
 
         function loginAs(username) {
             return function () {
@@ -235,7 +235,7 @@ describe('User admin', function () {
 
         var username = 'admin';
         var loggedInNavItems = ['Etusivu', 'Tietoa', 'Asiakirjat', 'Asukkaille', 'Hallitus', 'Test', 'Admin'];
-        var browser = new zombie.Browser({ site: APP_URL });
+        var browser = new Browser({ site: APP_URL });
 
         function visit(path) {
             return function () {

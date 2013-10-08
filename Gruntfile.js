@@ -29,14 +29,13 @@ module.exports = function (grunt) {
         },
         compass: {
             dev: {
-                src: 'src/sass',
-                dest: 'public/dist',
-                outputstyle: 'compressed', // One of: nested, expanded, compact, compressed
-                linecomments: false,
-                forcecompile: true,
-                debugsass: false,
-                images: 'public/img',
-                relativeassets: true
+                options: {
+                    sassDir: 'src/sass',
+                    cssDir: 'public/dist',
+                    imagesDir: 'public/img',
+                    outputStyle: 'compressed', // One of: nested, expanded, compact, compressed
+                    force: true
+                }
             }
         },
         watch: {
@@ -80,9 +79,12 @@ module.exports = function (grunt) {
         uglify: {}
     });
 
-    grunt.loadNpmTasks('grunt-compass');
+    // grunt.loadNpmTasks('grunt-cont rib-jshint');
+    // grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-compass');
 
     // Default task.
-    grunt.registerTask('default', 'lint concat min compass:dev');
+    //grunt.registerTask('default', 'lint concat min compass:dev');
+    grunt.registerTask('default', 'compass:dev');
 
 };

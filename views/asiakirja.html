@@ -43,7 +43,7 @@
             </option>
           {% endfor %}
         </select>
-        <input type="hidden" name="_csrf" value="{{ session._csrf }}">
+        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
         <input class="inline" type="submit" value="Muuta">
       </fieldset>
     </form>

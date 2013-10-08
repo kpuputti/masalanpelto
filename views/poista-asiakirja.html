@@ -7,7 +7,7 @@
   <p>Haluatko varmasti poistaa asiakirjan: {{ file.name }}?</p>
 
   <form action="/asiakirjat/{{ file._id }}/poista" method="post">
-    <input type="hidden" name="_csrf" value="{{ session._csrf }}">
+    <input type="hidden" name="_csrf" value="{{ csrfToken }}">
     <button type="submit"><span class="lsf">&#xe12c;</span> Poista</button>
   </form>
 

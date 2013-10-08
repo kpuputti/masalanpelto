@@ -15,7 +15,7 @@ Install required tools:
 
 Install [Grunt](http://gruntjs.com/):
 
-    npm install -g grunt
+    npm install -g grunt-cli
 
 Install [Compass](http://compass-style.org/)
 
@@ -54,6 +54,10 @@ Build static assets (public JavaScript + SCSS files):
 Build as files change:
 
     grunt watch
+
+Start MongoDB:
+
+    mongod
 
 Start app:
 

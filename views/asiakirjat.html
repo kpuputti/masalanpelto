@@ -8,9 +8,9 @@
     <p><a href="/asiakirjat/uusi"><span class="lsf">&#xe108;</span> Lisää uusi asiakirja</a></p>
   {% endif %}
 
-  {% if files.length === 0 %}
+  {% if files.length == 0 %}
     <p>Ei asiakirjoja.</p>
-  {% else if files.length === 1 %}
+  {% elif files.length == 1 %}
     <p>1 asiakirja.</p>
   {% else %}
     <p>{{ files.length }} asiakirjaa.</p>
