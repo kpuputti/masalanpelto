@@ -1,12 +1,12 @@
 {
     "name": "masalanpelto",
     "homepage": "https://github.com/kpuputti/masalanpelto",
-    "version": "0.2.0",
-    "author": "Kimmo Puputti <kpuputti@gmail.com>",
+    "version": "0.2.1",
+    "author": "Kimmo Puputti <kpuputti@gmail.com> (http://kpuputti.fi/)",
     "description": "Website for Masalanpelto housing association.",
     "repository": {
         "type": "git",
-        "url": "git@github.com:kpuputti/masalanpelto.git"
+        "url": "http://github.com/kpuputti/masalanpelto.git"
     },
     "scripts": {
         "start": "foreman start",
@@ -26,8 +26,8 @@
     "devDependencies": {
         "grunt": "latest",
         "grunt-contrib-jshint": "latest",
-        "grunt-contrib-uglify": "latest",
         "grunt-contrib-compass": "latest",
+        "grunt-contrib-watch": "latest",
         "mocha": "latest",
         "chai": "latest",
         "superagent": "latest",
