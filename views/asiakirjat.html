@@ -23,7 +23,7 @@
           <span class="info-wrapper">
             <span class="title">{{ file.name }}</span>
             <span class="info">
-              <b>Lisätty:</b> {{ file.dateAdded }} <b>Näkyvyys:</b> {{ file.visibility }}
+              <b>Lisätty:</b> {{ file.dateAdded|date('Y-m-d') }} <b>Näkyvyys:</b> {{ file.visibility }}
             </span>
           </span>
           <span class="description">{{ file.description }}</span>

@@ -16,7 +16,7 @@
     <dd>{{ file.visibility }}</dd>
 
     <dt>Lisätty</dt>
-    <dd>{{ file.dateAdded }}</dd>
+    <dd>{{ file.dateAdded|date('Y-m-d') }}</dd>
 
     <dt>Lisääjä</dt>
     <dd>{{ file.addedBy }}</dd>
@@ -32,7 +32,7 @@
   </dl>
 
   {% if canChangeVisibility %}
-    <form action="/asiakirjat/{{ file._id }}" method="post">
+    <form action="/asiakirjat/{{ fileId }}" method="post">
       <fieldset>
         <legend>Muuta asiakirjan näkyvyys</legend>
         <select name="visibility">
@@ -50,7 +50,7 @@
   {% endif %}
 
   {% if canRemoveFile %}
-    <p><a href="/asiakirjat/{{ file._id }}/poista"><span class="lsf">&#xe12c;</span> Poista asiakirja</a></p>
+    <p><a href="/asiakirjat/{{ fileId }}/poista"><span class="lsf">&#xe12c;</span> Poista asiakirja</a></p>
   {% endif %}
 
 {% endblock %}

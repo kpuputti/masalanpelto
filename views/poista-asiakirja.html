@@ -6,11 +6,11 @@
 
   <p>Haluatko varmasti poistaa asiakirjan: {{ file.name }}?</p>
 
-  <form action="/asiakirjat/{{ file._id }}/poista" method="post">
+  <form action="/asiakirjat/{{ fileId }}/poista" method="post">
     <input type="hidden" name="_csrf" value="{{ csrfToken }}">
     <button type="submit"><span class="lsf">&#xe12c;</span> Poista</button>
   </form>
 
-  <p><a href="/asiakirjat/{{ file._id }}"><span class="lsf">&#xe00f;</span> Palaa takaisin</a></p>
+  <p><a href="/asiakirjat/{{ fileId }}"><span class="lsf">&#xe00f;</span> Palaa takaisin</a></p>
 
 {% endblock %}
