@@ -7,5 +7,5 @@ Location: Kirkkonummi, Finland
 /* SITE */
 Standards: HTML5, CSS3
 Components: Node.js, npm, heroku toolbelt, Express.js, HTML5 boilerplate, Compass, Grunt
-Software: Ubuntu, Sublime Text 2, Foreman
+Software: Ubuntu, OSX, Emacs, Sublime Text 2, Foreman
 GitHub: https://github.com/kpuputti/masalanpelto
