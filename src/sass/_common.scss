@@ -6,8 +6,18 @@ html, body {
 body {
     overflow-y: scroll;
 
+    background-image: image-url('postilaatikot.jpg');
+    background-size: auto $header-image-container-height;
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    &.page-login {
+        background-image: none;
+    }
+
     @include large-screen {
-        padding-top: $page-large-screen-top-padding
+        padding-top: $page-large-screen-top-padding;
+        background-size: auto $header-image-container-height-large;
     }
 }
 
@@ -16,10 +26,11 @@ body {
 
     position: relative;
     margin: 0 auto;
-    padding: 0 $container-side-padding;
+    padding: ($header-image-container-height - $header-height) $container-side-padding 0 $container-side-padding;
 
     @include large-screen {
         width: $large-screen-breakpoint;
+        padding-top: $header-image-container-height-large - $header-height;
     }
 }
 
