@@ -67,7 +67,7 @@ Now the app is running at `localhost:5000`.
 
 ## Testing
 
-The test suite uses [Mocha](http://visionmedia.github.com/mocha/) and
+The test suite uses [Mocha](http://mochajs.org/) and
 [Chai](http://chaijs.com/) assertions. The tests can be run with:
 
     npm test
